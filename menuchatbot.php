@@ -13,7 +13,7 @@ if ($_SESSION['level'] != "user") {
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body class="menuuserphp">
+<body class="menuchatbot">
 	<div class="container">
 		<nav class="sidebar">
 			<header>

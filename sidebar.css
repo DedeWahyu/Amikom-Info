@@ -109,14 +109,7 @@ header .image-text .header-text{
     border-radius: 6px;
     transition: var(--tran-04);
 }
-.sidebar li a:hover{
-    background: var(--primary-color);
-}
-.sidebar li a:hover.icon,
-.sidebar li a:hover.text{
-    color: var(--sidebar-color);
 
-}
 .container {
     display: flex;
 }
@@ -134,7 +127,7 @@ header .image-text .header-text{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; /* Membuat ruang antara dua card */
-    margin-top: 160px; /* Sesuaikan margin sesuai kebutuhan */
+    margin-top: 50px; /* Sesuaikan margin sesuai kebutuhan */
     align-items: center; 
 }
 
@@ -148,25 +141,115 @@ header .image-text .header-text{
     margin-right: 10px;
     margin-left: 10px;
     margin-bottom: 20px;
+    min-height: 280px;
+}
+
+.card h2{
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.card p{
+    text-align: center;
 }
 
 .full-width-card {
     flex: 0 0 90%; /* Membuat card keempat memiliki lebar 100% */
-    margin-top: 50px;
     margin-left: 51px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+}
+
+.full-width-card h2{
+    text-align: center;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+
+.full-width-card p{
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .nama-user {
     color: blue;
 }
 
-.menu .nav-link-dashboard {
-    background-color: none;
+body.menuuserphp .menu .nav-link-dashboard {
+    background-color: #695CFE;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+body.menuuserphp .menu .nav-link-dashboard i{
+    color: white;
+}
+
+body.menuuserphp .menu .nav-link-dashboard span{
+    color: white;
+}
+
+body.menupembayaran .menu .nav-link-pembayaran {
+    background-color: #695CFE;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+body.menupembayaran .menu .nav-link-pembayaran i{
+    color: white;
+}
+
+body.menupembayaran .menu .nav-link-pembayaran span{
+    color: white;
+}
+
+body.menuchatbot .menu .nav-link-chatbot {
+    background-color: #695CFE;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+body.menuchatbot .menu .nav-link-chatbot i{
+    color: white;
+}
+
+body.menuchatbot .menu .nav-link-chatbot span{
+    color: white;
+}
+
+body.menupengingat .menu .nav-link-pengingat {
+    background-color: #695CFE;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+body.menupengingat .menu .nav-link-pengingat i{
+    color: white;
+}
+
+body.menupengingat .menu .nav-link-pengingat span{
+    color: white;
+}
+
+.sidebar li:hover{
+    background-color: #695CFE;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+.sidebar li:hover i{
+    color: white;
+}
+
+.sidebar li:hover span{
+    color: white;
 }
 
 .menu-links-logout{
@@ -179,4 +262,165 @@ header .image-text .header-text{
 
 .nav-link-profil {
     border: 1px solid black;
+}
+
+.button-read-more {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.button-read-more button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #3134e4;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.button-read-more button:hover {
+  background-color: rgb(192, 30, 179);
+  box-shadow: 0px 15px 20px rgba(202, 15, 226, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.button-read-more button:active {
+  transform: translateY(-1px);
+}
+
+body.menupembayaran .content {
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+
+.h1-container {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.tabel-pembayaran {
+    display: flex;
+    justify-content: center;    
+}
+
+.tabel-pembayaran table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabel-pembayaran th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tabel-pembayaran th {
+    background-color: #f2f2f2;
+}
+
+.form-container {
+    width: 90%;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 50px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container .button-submit {
+    width: 100%;    
+    text-align: center;
+}
+
+.form-container label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-container select, .form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-container button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #45a049;
+}
+
+.center-button {
+    text-align: center;
+}
+
+.tabel-pembayaran th {
+    text-align: center;
+}
+
+.tabel-pembayaran td {
+    text-align: center;
+}
+
+.tabel-pembayaran button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #3d405b;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+    width: 90px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.tabel-pembayaran button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.tabel-pembayaran button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+}
+
+.tabel-pembayaran button:hover span {
+    padding-right: 15px;
+}
+
+.tabel-pembayaran button:hover span:after {
+    opacity: 1;
+    right: 0;
 }
