@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("koneksi.php");
 if ($_SESSION['level'] != "user") {
 	exit(); // Tambahkan baris ini untuk menghentikan eksekusi skrip setelah mengarahkan
 }
@@ -31,6 +32,7 @@ if ($_SESSION['level'] != "user") {
 
 			// Tampilkan formulir
 			var form = document.getElementById("form-data");			
+			
 		}
 	</script>
 	<div class="container">
@@ -74,7 +76,7 @@ if ($_SESSION['level'] != "user") {
 									</a>
 								</li>
 								<li class="nav-link-pengingat">
-									<a href="menupengingat.php">
+									<a href="adminmenupengingat.php">
 										<i class='bx bx-notification-off'></i>
 										<span class="text nav-text">Pengingat</span>
 									</a>
@@ -109,52 +111,29 @@ if ($_SESSION['level'] != "user") {
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Muamalat</td>
-							<td>123</td>
-							<td>Remedial</td>
-							<td>Rp. 4.000.000</td>
-							<td class="center-button"><button onclick="ambilNilai(this)"><span>BAYAR</span></button></td>
-						</tr>
-						<tr>
-							<td>Muamalat</td>
-							<td>123</td>
-							<td>SPP Tetap</td>
-							<td>Rp. 4.000.000</td>
-							<td class="center-button"><button onclick="ambilNilai(this)"><span>BAYAR</span></button></td>
-						</tr>
-						<tr>
-							<td>Muamalat</td>
-							<td>123</td>
-							<td>SPP Variabel</td>
-							<td>Rp. 4.000.000</td>
-							<td class="center-button"><button onclick="ambilNilai(this)"><span>BAYAR</span></button></td>
-						</tr>
-						<tr>
-							<td>BRI</td>
-							<td>321</td>
-							<td>Remedial</td>
-							<td>Rp. 4.000.000</td>
-							<td class="center-button"><button onclick="ambilNilai(this)"><span>BAYAR</span></button></td>
-						</tr>
-						<tr>
-							<td>BRI</td>
-							<td>321</td>
-							<td>SPP Tetap</td>
-							<td>Rp. 4.000.000</td>
-							<td class="center-button"><button onclick="ambilNilai(this)"><span>BAYAR</span></button></td>
-						</tr>
-						<tr>
-							<td>BRI</td>
-							<td>321</td>
-							<td>SPP Variabel</td>
-							<td>Rp. 4.000.000</td>
-							<td class="center-button"><button onclick="ambilNilai(this)"><span>BAYAR</span></button></td>
-						</tr>
+						<?php
+						// Ambil data dari database untuk ditampilkan
+						// Gantilah 'nama_tabel' dengan nama tabel yang sesuai di database Anda
+						$query = "SELECT * FROM payment";
+						$result = mysqli_query($koneksi, $query);
+
+						while ($row = mysqli_fetch_assoc($result)) {
+							echo "<tr>";
+							echo "<td>" . $row['bank'] . "</td>";
+							echo "<td>" . $row['nova'] . "</td>";
+							echo "<td>" . $row['pembayaran'] . "</td>";
+							echo "<td>" . $row['nominal'] . "</td>";
+							echo "<td class='center-button'><button onclick='ambilNilai(this)'><span>BAYAR</span>";
+							echo "</tr>";
+						}
+						?>
 					</tbody>
 				</table>
 			</div>
-			<form id="form-data" action="#">
+			<div class="h1-container">
+				<h1>Form Pembayaran</h1>
+			</div>
+			<form class="pembatas-form" id="form-data" action="process_payment.php" method="post">
 				<div class="form-container">
 					<label for="bank">Bank</label>
 					<input type="text" id="bank" name="bank" readonly></input>
@@ -172,10 +151,13 @@ if ($_SESSION['level'] != "user") {
 					</select>
 
 					<label for="noRek">Nomor Rekening</label>
-					<input type="text" id="noRek" name="noRek">
-
-					<label for="biaya">Nominal Bayar</label>
-					<input type="text"></input>
+					<input type="text" id="noRek" name="noRek" required>
+					<?php
+					// Menampilkan pesan sukses jika ada
+					if (isset($_SESSION['success_message'])) {
+						echo '<div class="success-message">' . $_SESSION['success_message'] . '</div>';
+						unset($_SESSION['success_message']); // Hapus pesan setelah ditampilkan
+					} ?>
 					<div class="button-submit">
 						<button type="submit">Submit</button>
 					</div>

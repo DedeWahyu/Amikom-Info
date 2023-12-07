@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("koneksi.php");
 if ($_SESSION['level'] != "user") {
 	exit(); // Tambahkan baris ini untuk menghentikan eksekusi skrip setelah mengarahkan
 }
@@ -41,7 +42,7 @@ if ($_SESSION['level'] != "user") {
 									<span class="text nav-text">Dasboard</span>
 								</a>
 							</li>
-							<ul class="menu-links">								
+							<ul class="menu-links">
 								<li class="nav-link-pembayaran">
 									<a href="menupembayaran.php">
 										<i class='bx bx-wallet-alt'></i>
@@ -76,43 +77,53 @@ if ($_SESSION['level'] != "user") {
 		</nav>
 		<div class="content">
 			<!-- Container for Cards -->
-			<div class="card-container">
-				<!-- Card 1 -->
-				<div class="card">
-					<h2>Informasi Perkuliahan</h2>
-					<p>Informasi ini berisi tentang pengumuman terkait perkuliahan, kalender akademis dan informasi penting.</p>
-					<div class="button-read-more">
-						<button onclick="window.location.href='#'">Read More</button>
-					</div>
-				</div>
-
-				<!-- Card 2 -->
-				<div class="card">
-					<h2>Informasi Syarat Kelulusan</h2>
-					<p>Informasi ini berisi tentang syarat apa saja yang dibutuhkan mahasiswa untuk lulus dari Universitas Amikom Yogyakarta.</p>
-					<div class="button-read-more">
-						<button onclick="window.location.href='#'">Read More</button>
-					</div>
-				</div>
-
-				<!-- Card 3 -->
-				<div class="card">
-					<h2>Informasi Wajib</h2>
-					<p>Informasi ini berisi tentang pengumuman yang wajib dilakukan mahasiswa seperti pengumpulan berkas atau pembaruan berkas.</p>
-					<div class="button-read-more">
-						<button onclick="window.location.href='#'">Read More</button>
-					</div>
-				</div>
-
-				<!-- Bottom Card -->
-				<div class="full-width-card">
-					<h2>Informasi Event</h2>
-					<p>Informasi ini berisi tentang event yang dapat mencakup berbagai jenis kegiatan, baik akademis maupun non-akademis seperti seminar, konferensi, lomba dan festival.</p>
-					<div class="button-read-more">
-						<button onclick="window.location.href='#'">Read More</button>
-					</div>
-				</div>	
+			<div class="fitur-pengingat">
+				<h1>Mengaktifkan / Menonaktifkan Pengingat </h1>
 			</div>
+			<div class="onoff-switch">
+				<label class="switch">
+					<input type="checkbox">
+					<span class="slider"></span>
+				</label>
+			</div>
+			<?php
+			 // Ambil data dari database berdasarkan sesi pengguna
+			 $username = $_SESSION['username'];
+			 $query = "SELECT p.* FROM pengingat p JOIN tb_login l ON p.season_sender = l.username WHERE l.username = '$username'";
+			 $result = mysqli_query($koneksi, $query);
+ 
+			 if ($result) {
+				 while ($row = mysqli_fetch_assoc($result)) {
+					 // Tampilkan data email, WhatsApp, dan Telegram
+					 echo '<div class="card-pengingat">';
+					 echo '<div class="full-card">';
+					 echo '<img src="gmail.png" alt="logo">';
+					 echo '<h2>Email</h2>';
+					 echo '<p>' . $row['email'] . '</p>';
+					 echo '</div>';
+ 
+					 echo '<div class="full-card">';
+					 echo '<img src="whatsapp.png" alt="logo">';
+					 echo '<h2>WhatsApp</h2>';
+					 echo '<p>' . $row['whatsapp'] . '</p>';
+					 echo '</div>';
+ 
+					 echo '<div class="full-card">';
+					 echo '<div class="gambar-telegram">';
+					 echo '<img src="telegram.png" alt="logo">';
+					 echo '</div>';
+					 echo '<h2>Telegram</h2>';
+					 echo '<p>' . $row['telegram'] . '</p>';
+					 echo '</div>';
+					 echo '</div>';
+				 }
+			 } else {
+				 echo "Error mengambil data: " . mysqli_error($koneksi);
+			 }
+ 
+			 // Tutup koneksi ke database
+			 mysqli_close($koneksi);
+			 ?>
 		</div>
 	</div>
 </body>

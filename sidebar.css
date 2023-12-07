@@ -308,25 +308,29 @@ body.menupembayaran .content {
     margin-top: 10px;
 }
 
-.tabel-pembayaran {
+body.menupembayaran .tabel-pembayaran {
     display: flex;
     justify-content: center;    
 }
 
-.tabel-pembayaran table {
+body.menupembayaran .tabel-pembayaran table {
     width: 90%;
     border-collapse: collapse;
     margin-top: 10px;
 }
 
-.tabel-pembayaran th, td {
+body.menupembayaran .tabel-pembayaran th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
 }
 
-.tabel-pembayaran th {
+body.menupembayaran .tabel-pembayaran th {
     background-color: #f2f2f2;
+}
+
+.pembatas-form {
+    margin-bottom: 15px;
 }
 
 .form-container {
@@ -341,7 +345,6 @@ body.menupembayaran .content {
 }
 
 .form-container .button-submit {
-    width: 100%;    
     text-align: center;
 }
 
@@ -378,15 +381,15 @@ body.menupembayaran .content {
     text-align: center;
 }
 
-.tabel-pembayaran th {
+body.menupembayaran  .tabel-pembayaran th {
     text-align: center;
 }
 
-.tabel-pembayaran td {
+body.menupembayaran  .tabel-pembayaran td {
     text-align: center;
 }
 
-.tabel-pembayaran button {
+body.menupembayaran .tabel-pembayaran button {
     display: inline-block;
     border-radius: 4px;
     background-color: #3d405b;
@@ -400,14 +403,14 @@ body.menupembayaran .content {
     cursor: pointer;
 }
 
-.tabel-pembayaran button span {
+body.menupembayaran  .tabel-pembayaran button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
 
-.tabel-pembayaran button span:after {
+body.menupembayaran .tabel-pembayaran button span:after {
     content: '»';
     position: absolute;
     opacity: 0;
@@ -416,11 +419,434 @@ body.menupembayaran .content {
     transition: 0.5s;
 }
 
-.tabel-pembayaran button:hover span {
+body.menupembayaran .tabel-pembayaran button:hover span {
     padding-right: 15px;
 }
 
-.tabel-pembayaran button:hover span:after {
+body.menupembayaran .tabel-pembayaran button:hover span:after {
     opacity: 1;
     right: 0;
+}
+
+/*Pembatas ChatBot*/
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-top: 0px;
+}
+.wrapper .title{
+    background: #007bff;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    text-align: center;
+    border-bottom: 1px solid #006fe6;
+    border-radius: 5px 5px 0 0;
+}
+.wrapper .form{
+    padding: 20px 15px;
+    min-height: 81%;
+}
+.wrapper .form .inbox{
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+}
+.wrapper .form .user-inbox{
+    justify-content: flex-end;
+    margin: 13px 0;
+}
+.wrapper .form .inbox .icon{
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    background: #007bff;
+}
+.wrapper .form .inbox .msg-header{
+    max-width: 53%;
+    margin-left: 10px;
+}
+.form .inbox .msg-header p{
+    color: #fff;
+    background: #007bff;
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 14px;
+    word-break: break-all;
+}
+.form .user-inbox .msg-header p{
+    color: #333;
+    background: #efefef;
+}
+.wrapper .typing-field{
+    display: flex; 
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+.wrapper .typing-field .input-data{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.wrapper .typing-field .input-data input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: 1px solid transparent;
+    padding: 0 80px 0 15px;
+    border-radius: 3px;
+    font-size: 15px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+.typing-field .input-data input:focus{
+    border-color: black;
+}
+.input-data input::placeholder{
+    color: #999999;
+    transition: all 0.3s ease;
+}
+.input-data input:focus::placeholder{
+    color: #bfbfbf;
+}
+.wrapper .typing-field .input-data button{
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    height: 45px;
+    width: 70px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 3px;
+    background: #007bff;
+    border: 1px solid #007bff;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+.wrapper .typing-field .input-data input:valid ~ button{
+    opacity: 1;
+    pointer-events: auto;
+}
+.typing-field .input-data button:hover{
+    background: #006fef;
+}
+
+/* Pembatas pengingat */
+.fitur-pengingat {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card-pengingat {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 90px;
+    align-items: center; 
+}
+
+.full-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 90%;
+    margin-left: 51px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+    min-height: 100px;
+}
+
+.full-card h2 {
+    border-right: 1px solid black;
+    padding-right: 10px;
+}
+
+.full-card p {
+    padding-left: 10px;
+}
+
+.full-card img{
+    width: 50px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.gambar-telegram img{
+    width: 40px;
+}
+
+/* Pembatas untuk toggle */
+.onoff-switch {
+    text-align: center;
+    position: fixed;
+    top: 105px;
+    right: 470px;
+    z-index: 999;
+}
+
+.onoff-switch .switch {
+ position: relative;
+ display: inline-block;
+ width: 120px;
+ height: 34px;
+}
+
+.onoff-switch .switch input {
+ display: none;
+}
+
+.onoff-switch .slider {
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #3C3C3C;
+ -webkit-transition: .4s;
+ transition: .4s;
+ border-radius: 34px;
+}
+
+.onoff-switch .slider:before {
+ position: absolute;
+ content: "";
+ height: 26px;
+ width: 26px;
+ left: 4px;
+ bottom: 4px;
+ background-color: white;
+ -webkit-transition: .4s;
+ transition: .4s;
+ border-radius: 50%;
+}
+
+.onoff-switch input:checked + .slider {
+ background-color: #0E6EB8;
+}
+
+.onoff-switch input:focus + .slider {
+ box-shadow: 0 0 1px #2196F3;
+}
+
+.onoff-switch input:checked + .slider:before {
+ -webkit-transform: translateX(26px);
+ -ms-transform: translateX(26px);
+ transform: translateX(85px);
+}
+
+/*------ ADDED CSS ---------*/
+.onoff-switch .slider:after {
+ content: 'DISABLED';
+ color: white;
+ display: block;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top: 50%;
+ left: 50%;
+ font-size: 10px;
+ font-family: Verdana, sans-serif;
+}
+
+.onoff-switch input:checked + .slider:after {
+ content: 'ENABLED';
+}
+
+/*--------- END --------*/
+
+/*Menu admin fitur hover*/
+body.menuadminphp .menu .nav-link-dashboard {
+    background-color: #695CFE;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+body.menuadminphp .menu .nav-link-dashboard i{
+    color: white;
+}
+
+body.menuadminphp .menu .nav-link-dashboard span{
+    color: white;
+}
+
+/*Menu admin pembayaran fitur hover*/
+body.adminpembayaranphp .menu .nav-link-pembayaran {
+    background-color: #695CFE;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+body.adminpembayaranphp .menu .nav-link-pembayaran i{
+    color: white;
+}
+
+body.adminpembayaranphp .menu .nav-link-pembayaran span{
+    color: white;
+}
+
+/*Menu admin pengingat fitur hover*/
+body.adminpengingatphp .menu .nav-link-pengingat {
+    background-color: #695CFE;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+body.adminpengingatphp .menu .nav-link-pengingat i{
+    color: white;
+}
+
+body.adminpengingatphp .menu .nav-link-pengingat span{
+    color: white;
+}
+
+/* tabel pengingat admin */
+
+body.adminpengingatphp .tabel-pembayaran {
+    display: flex;
+    justify-content: center;    
+}
+
+body.adminpengingatphp .tabel-pembayaran table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+body.adminpengingatphp .tabel-pembayaran th, td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: left;
+}
+
+body.adminpengingatphp .tabel-pembayaran th {
+    background-color: #f2f2f2;
+}
+
+body.adminpengingatphp .tabel-pembayaran th {
+    text-align: center;
+}
+
+body.adminpengingatphp .tabel-pembayaran td {
+    text-align: center;
+}
+
+/* tabel pembayaran admin */
+
+body.adminpembayaranphp .tabel-pembayaran {
+    display: flex;
+    justify-content: center;    
+}
+
+body.adminpembayaranphp .tabel-pembayaran table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+body.adminpembayaranphp .tabel-pembayaran th, td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: left;
+}
+
+body.adminpembayaranphp .tabel-pembayaran th {
+    background-color: #f2f2f2;
+}
+
+body.adminpembayaranphp .tabel-pembayaran th {
+    text-align: center;
+}
+
+body.adminpembayaranphp .tabel-pembayaran td {
+    text-align: center;
+}
+
+body.adminpembayaranphp .tabel-pembayaran button {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #fa1239;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+    width: 60px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+body.adminpembayaranphp .tabel-pembayaran button:hover {
+    background-color: #006fe6;
+}
+
+/* tabel pengingat admin */
+
+body.adminpengingat .tabel-pembayaran {
+    display: flex;
+    justify-content: center;    
+}
+
+body.adminpengingat .tabel-pembayaran table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+body.adminpengingat .tabel-pembayaran th, td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: left;
+}
+
+body.adminpengingat .tabel-pembayaran th {
+    background-color: #f2f2f2;
+}
+
+body.adminpengingat .tabel-pembayaran th {
+    text-align: center;
+}
+
+body.adminpengingat .tabel-pembayaran td {
+    text-align: center;
+}
+
+body.adminpengingat .tabel-pembayaran button {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #fa1239;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+    width: 60px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+body.adminpengingat .tabel-pembayaran button:hover {
+    background-color: #006fe6;
 }

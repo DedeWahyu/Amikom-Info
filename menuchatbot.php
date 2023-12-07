@@ -11,6 +11,8 @@ if ($_SESSION['level'] != "user") {
 	<title>user</title>
 	<link rel="stylesheet" href="sidebar.css">
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body class="menuchatbot">
@@ -41,7 +43,7 @@ if ($_SESSION['level'] != "user") {
 									<span class="text nav-text">Dasboard</span>
 								</a>
 							</li>
-							<ul class="menu-links">								
+							<ul class="menu-links">
 								<li class="nav-link-pembayaran">
 									<a href="menupembayaran.php">
 										<i class='bx bx-wallet-alt'></i>
@@ -75,43 +77,24 @@ if ($_SESSION['level'] != "user") {
 			</div>
 		</nav>
 		<div class="content">
-			<!-- Container for Cards -->
-			<div class="card-container">
-				<!-- Card 1 -->
-				<div class="card">
-					<h2>Informasi Perkuliahan</h2>
-					<p>Informasi ini berisi tentang pengumuman terkait perkuliahan, kalender akademis dan informasi penting.</p>
-					<div class="button-read-more">
-						<button onclick="window.location.href='#'">Read More</button>
+			<div class="wrapper">
+				<div class="title">Layanan Chatbot</div>
+				<div class="form">
+					<div class="bot-inbox inbox">
+						<div class="icon">
+							<i class="fas fa-user"></i>
+						</div>
+						<div class="msg-header">
+							<p>Halo kakak ada yang bisa saya bantu?</p>
+						</div>
+					</div>					
+				</div>
+				<div class="typing-field">
+					<div class="input-data">
+						<input id="data" type="text" placeholder="Type something here.." required>
+						<button id="send-btn">Send</button>
 					</div>
 				</div>
-
-				<!-- Card 2 -->
-				<div class="card">
-					<h2>Informasi Syarat Kelulusan</h2>
-					<p>Informasi ini berisi tentang syarat apa saja yang dibutuhkan mahasiswa untuk lulus dari Universitas Amikom Yogyakarta.</p>
-					<div class="button-read-more">
-						<button onclick="window.location.href='#'">Read More</button>
-					</div>
-				</div>
-
-				<!-- Card 3 -->
-				<div class="card">
-					<h2>Informasi Wajib</h2>
-					<p>Informasi ini berisi tentang pengumuman yang wajib dilakukan mahasiswa seperti pengumpulan berkas atau pembaruan berkas.</p>
-					<div class="button-read-more">
-						<button onclick="window.location.href='#'">Read More</button>
-					</div>
-				</div>
-
-				<!-- Bottom Card -->
-				<div class="full-width-card">
-					<h2>Informasi Event</h2>
-					<p>Informasi ini berisi tentang event yang dapat mencakup berbagai jenis kegiatan, baik akademis maupun non-akademis seperti seminar, konferensi, lomba dan festival.</p>
-					<div class="button-read-more">
-						<button onclick="window.location.href='#'">Read More</button>
-					</div>
-				</div>	
 			</div>
 		</div>
 	</div>

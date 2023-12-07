@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION['level'] != "admin") {
-    exit(); // Tambahkan baris ini untuk menghentikan eksekusi skrip setelah mengarahkan
+	exit(); // Tambahkan baris ini untuk menghentikan eksekusi skrip setelah mengarahkan
 }
 ?>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ if ($_SESSION['level'] != "admin") {
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
-<body class="menuadminphp">
+<body class="adminpengingatphp">
 	<div class="container">
 		<nav class="sidebar">
 			<header>
@@ -41,7 +41,7 @@ if ($_SESSION['level'] != "admin") {
 									<span class="text nav-text">Informasi</span>
 								</a>
 							</li>
-							<ul class="menu-links">								
+							<ul class="menu-links">
 								<li class="nav-link-pembayaran">
 									<a href="adminpembayaran.php">
 										<i class='bx bx-wallet-alt'></i>
@@ -76,7 +76,30 @@ if ($_SESSION['level'] != "admin") {
 		</nav>
 		<div class="content">
 			<div class="informasi-container">
-				
+				<div class="h1-container">
+					<h1>Data pengingat</h1>
+				</div>
+				<div class="tabel-pembayaran">
+					<table>
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Email</th>
+								<th>No VA</th>
+								<th>Pembayaran</th>
+								<th>Nominal</th>
+								<th>Bank Pengirim</th>
+								<th>No rek</th>
+								<th>Nama</th>
+								<th>Tahun</th>
+								<th>Hapus</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>
