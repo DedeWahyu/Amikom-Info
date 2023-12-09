@@ -31,8 +31,8 @@ if ($_SESSION['level'] != "user") {
 			document.getElementById("nominal").value = nominal;
 
 			// Tampilkan formulir
-			var form = document.getElementById("form-data");			
-			
+			var form = document.getElementById("form-data");
+
 		}
 	</script>
 	<div class="container">
@@ -50,15 +50,15 @@ if ($_SESSION['level'] != "user") {
 			<div class="menu-bar">
 				<div class="menu">
 					<ul class="menu-links">
-						<li class="nav-link-profil">
-							<span class="nama-user">Welcome,
+						<p>
+							<span class="nama-user"> Welcome,
 								<?php echo $_SESSION['username']; ?>
 							</span>
-						</li>
+						</p>
 						<ul class="menu-links-semua">
 							<li class="nav-link-dashboard">
 								<a href="menuuser.php">
-									<i class='bx bx-home'></i>
+									<i class='bx bxs-dashboard'></i>
 									<span class="text nav-text">Dasboard</span>
 								</a>
 							</li>

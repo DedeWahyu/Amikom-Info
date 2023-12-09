@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION['level'] != "admin") {
-    exit(); // Tambahkan baris ini untuk menghentikan eksekusi skrip setelah mengarahkan
+	exit(); // Tambahkan baris ini untuk menghentikan eksekusi skrip setelah mengarahkan
 }
 ?>
 <!DOCTYPE html>
@@ -29,31 +29,25 @@ if ($_SESSION['level'] != "admin") {
 			<div class="menu-bar">
 				<div class="menu">
 					<ul class="menu-links">
-						<li class="nav-link-profil">
-							<span class="nama-user">Welcome,
+						<p>
+							<span class="nama-user"> Welcome,
 								<?php echo $_SESSION['username']; ?>
 							</span>
-						</li>
+						</p>
 						<ul class="menu-links-semua">
 							<li class="nav-link-dashboard">
 								<a href="menuadmin.php">
-									<i class='bx bx-info-circle'></i>
-									<span class="text nav-text">Informasi</span>
+									<i class='bx bx-home'></i>
+									<span class="text nav-text">Home</span>
 								</a>
 							</li>
-							<ul class="menu-links">								
+							<ul class="menu-links">
 								<li class="nav-link-pembayaran">
 									<a href="adminpembayaran.php">
 										<i class='bx bx-wallet-alt'></i>
 										<span class="text nav-text">Pembayaran</span>
 									</a>
-								</li>
-								<li class="nav-link-chatbot">
-									<a href="#">
-										<i class='bx bx-bot'></i>
-										<span class="text nav-text">Chatbot</span>
-									</a>
-								</li>
+								</li>								
 								<li class="nav-link-pengingat">
 									<a href="adminpengingat.php">
 										<i class='bx bx-notification-off'></i>
@@ -75,8 +69,8 @@ if ($_SESSION['level'] != "admin") {
 			</div>
 		</nav>
 		<div class="content">
-			<div class="informasi-container">
-				
+			<div class="home-container">
+				<h1>Selamat datang admin</h1>
 			</div>
 		</div>
 	</div>

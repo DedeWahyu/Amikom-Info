@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['id_login'] = $row['id_login'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['level'] = $row['level'];
+            $_SESSION['tahun'] = $row['tahun'];
 
             // Alihkan berdasarkan level pengguna
             if ($_SESSION['level'] == 'admin') {

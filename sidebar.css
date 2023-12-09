@@ -238,7 +238,26 @@ body.menupengingat .menu .nav-link-pengingat span{
     color: white;
 }
 
+.contact-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+    font-size: 20px;
+}
+
+.contact-admin i {
+    padding-right: 10px;
+    font-size: 30px;
+}
+
 .sidebar li:hover{
+    background-color: #695CFE;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+
+.sidebar .menu-links-semua  .li:hover{
     background-color: #695CFE;
     border-radius: 10px;
     padding-left: 15px;
@@ -260,9 +279,14 @@ body.menupengingat .menu .nav-link-pengingat span{
     margin-top: 20px;
 }
 
-.nav-link-profil {
-    border: 1px solid black;
+.menu-links p{
+    margin-top: 20px;
+    margin-left: 10px;
 }
+
+/*.nav-link-profil {
+    border: 1px solid black;
+}*/
 
 .button-read-more {
     margin-top: 10px;
@@ -692,6 +716,27 @@ body.menuadminphp .menu .nav-link-dashboard span{
     color: white;
 }
 
+body.menuadminphp .content {
+    background-image: url('/aminfo/amikom.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.home-container h1 {
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: blueviolet;
+    color: white;
+}
+
 /*Menu admin pembayaran fitur hover*/
 body.adminpembayaranphp .menu .nav-link-pembayaran {
     background-color: #695CFE;
@@ -849,4 +894,160 @@ body.adminpengingat .tabel-pembayaran button {
 
 body.adminpengingat .tabel-pembayaran button:hover {
     background-color: #006fe6;
+}
+
+/* informasi syarat kelulusan */
+.h1-syarat {
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.h2-syarat {
+    display: flex;
+}
+
+.h2-syarat h2 {
+    margin-top: 20px;
+    padding-left: 50px;
+}
+
+.syarat-content {
+    margin-top: 10px;
+    width: 85%;
+    margin-left: 90px;
+    text-align: justify;    
+}
+
+.syarat-content a {
+    margin-left: 10px;    
+    color: blue;
+}
+
+.syarat-content ol {
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.syarat-content li {
+    margin-top: 5px;
+}
+
+/* Informasi event */
+
+.h1-event{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.card-event-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card-event h2{
+    color: #006fe6;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px black;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+
+.card-event p {
+    padding-bottom: 10px;
+    text-align: justify;
+}
+
+.card-event {
+    width: 97%;    
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-event-gambar {
+    display: flex;
+    justify-content: center;
+}
+
+.card-event-gambar img {
+    border-radius: 10px;
+}
+
+/* Informasi perkuliahan */
+
+.card-perkuliahan-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card-perkuliahan h2{
+    color: red;
+    margin-bottom: 10px;
+}
+
+.card-perkuliahan p {
+    padding-bottom: 10px;
+    text-align: justify;
+}
+
+.card-perkuliahan {
+    width: 97%;    
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-perkuliahan ol li {
+    margin-left: 25px;
+    padding-bottom: 10px;
+}
+
+.card-perkuliahan ol {
+    color: blue;
+}
+
+.card-perkuliahan a {
+    text-decoration: none;
+}
+
+/* Informasi wajib */
+
+.card-wajib-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card-wajib h2{
+    color: green;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card-wajib p {
+    padding-bottom: 10px;
+    text-align: justify;
+}
+
+.card-wajib {
+    width: 97%;    
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-wajib ul li {
+    margin-left: 25px;
+    padding-bottom: 10px;
 }

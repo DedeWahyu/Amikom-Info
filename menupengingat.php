@@ -30,15 +30,15 @@ if ($_SESSION['level'] != "user") {
 			<div class="menu-bar">
 				<div class="menu">
 					<ul class="menu-links">
-						<li class="nav-link-profil">
-							<span class="nama-user">Welcome,
+						<p>
+							<span class="nama-user"> Welcome,
 								<?php echo $_SESSION['username']; ?>
 							</span>
-						</li>
+						</p>
 						<ul class="menu-links-semua">
 							<li class="nav-link-dashboard">
 								<a href="menuuser.php">
-									<i class='bx bx-home'></i>
+									<i class='bx bxs-dashboard'></i>
 									<span class="text nav-text">Dasboard</span>
 								</a>
 							</li>
@@ -87,43 +87,47 @@ if ($_SESSION['level'] != "user") {
 				</label>
 			</div>
 			<?php
-			 // Ambil data dari database berdasarkan sesi pengguna
-			 $username = $_SESSION['username'];
-			 $query = "SELECT p.* FROM pengingat p JOIN tb_login l ON p.season_sender = l.username WHERE l.username = '$username'";
-			 $result = mysqli_query($koneksi, $query);
- 
-			 if ($result) {
-				 while ($row = mysqli_fetch_assoc($result)) {
-					 // Tampilkan data email, WhatsApp, dan Telegram
-					 echo '<div class="card-pengingat">';
-					 echo '<div class="full-card">';
-					 echo '<img src="gmail.png" alt="logo">';
-					 echo '<h2>Email</h2>';
-					 echo '<p>' . $row['email'] . '</p>';
-					 echo '</div>';
- 
-					 echo '<div class="full-card">';
-					 echo '<img src="whatsapp.png" alt="logo">';
-					 echo '<h2>WhatsApp</h2>';
-					 echo '<p>' . $row['whatsapp'] . '</p>';
-					 echo '</div>';
- 
-					 echo '<div class="full-card">';
-					 echo '<div class="gambar-telegram">';
-					 echo '<img src="telegram.png" alt="logo">';
-					 echo '</div>';
-					 echo '<h2>Telegram</h2>';
-					 echo '<p>' . $row['telegram'] . '</p>';
-					 echo '</div>';
-					 echo '</div>';
-				 }
-			 } else {
-				 echo "Error mengambil data: " . mysqli_error($koneksi);
-			 }
- 
-			 // Tutup koneksi ke database
-			 mysqli_close($koneksi);
-			 ?>
+			// Ambil data dari database berdasarkan sesi pengguna
+			$username = $_SESSION['username'];
+			$query = "SELECT p.* FROM pengingat p JOIN tb_login l ON p.season_sender = l.username WHERE l.username = '$username'";
+			$result = mysqli_query($koneksi, $query);
+
+			if ($result) {
+				while ($row = mysqli_fetch_assoc($result)) {
+					// Tampilkan data email, WhatsApp, dan Telegram
+					echo '<div class="card-pengingat">';
+					echo '<div class="full-card">';
+					echo '<img src="gmail.png" alt="logo">';
+					echo '<h2>Email</h2>';
+					echo '<p>' . $row['email'] . '</p>';
+					echo '</div>';
+
+					echo '<div class="full-card">';
+					echo '<img src="whatsapp.png" alt="logo">';
+					echo '<h2>WhatsApp</h2>';
+					echo '<p>' . $row['whatsapp'] . '</p>';
+					echo '</div>';
+
+					echo '<div class="full-card">';
+					echo '<div class="gambar-telegram">';
+					echo '<img src="telegram.png" alt="logo">';
+					echo '</div>';
+					echo '<h2>Telegram</h2>';
+					echo '<p>' . $row['telegram'] . '</p>';
+					echo '</div>';
+					echo '</div>';
+				}
+			} else {
+				echo "Error mengambil data: " . mysqli_error($koneksi);
+			}
+
+			// Tutup koneksi ke database
+			mysqli_close($koneksi);
+			?>
+			<div class="contact-admin">
+				<i class='bx bx-phone-call'></i>
+				<p>Contact WA untuk melakukan perubahan : 0813-2721-0927</p>
+			</div>
 		</div>
 	</div>
 </body>

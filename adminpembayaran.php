@@ -17,10 +17,10 @@ function hapusEntri($id_bayar)
 
 // Cek apakah parameter aksi 'hapus' telah dikirim
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['aksi']) && $_POST['aksi'] === 'hapus' && isset($_POST['id_bayar'])) {
-    // Panggil fungsi hapusEntri dengan id_bayar yang diterima dari formulir
-    hapusEntri($_POST['id_bayar']);
-    header("Location: adminpembayaran.php"); // Redirect kembali ke halaman setelah menghapus
-    exit();
+	// Panggil fungsi hapusEntri dengan id_bayar yang diterima dari formulir
+	hapusEntri($_POST['id_bayar']);
+	header("Location: adminpembayaran.php"); // Redirect kembali ke halaman setelah menghapus
+	exit();
 }
 
 // Query untuk mengambil data dari tabel pembayaran dan tahun dari tabel lain
@@ -60,16 +60,16 @@ if (!$result) {
 			<div class="menu-bar">
 				<div class="menu">
 					<ul class="menu-links">
-						<li class="nav-link-profil">
-							<span class="nama-user">Welcome,
+						<p>
+							<span class="nama-user"> Welcome,
 								<?php echo $_SESSION['username']; ?>
 							</span>
-						</li>
+						</p>
 						<ul class="menu-links-semua">
 							<li class="nav-link-dashboard">
 								<a href="menuadmin.php">
-									<i class='bx bx-info-circle'></i>
-									<span class="text nav-text">Informasi</span>
+									<i class='bx bx-home'></i>
+									<span class="text nav-text">Home</span>
 								</a>
 							</li>
 							<ul class="menu-links">
@@ -78,13 +78,7 @@ if (!$result) {
 										<i class='bx bx-wallet-alt'></i>
 										<span class="text nav-text">Pembayaran</span>
 									</a>
-								</li>
-								<li class="nav-link-chatbot">
-									<a href="#">
-										<i class='bx bx-bot'></i>
-										<span class="text nav-text">Chatbot</span>
-									</a>
-								</li>
+								</li>								
 								<li class="nav-link-pengingat">
 									<a href="adminpengingat.php">
 										<i class='bx bx-notification-off'></i>

@@ -31,15 +31,15 @@ if ($_SESSION['level'] != "user") {
 			<div class="menu-bar">
 				<div class="menu">
 					<ul class="menu-links">
-						<li class="nav-link-profil">
-							<span class="nama-user">Welcome,
+						<p>
+							<span class="nama-user"> Welcome,
 								<?php echo $_SESSION['username']; ?>
 							</span>
-						</li>
+						</p>
 						<ul class="menu-links-semua">
 							<li class="nav-link-dashboard">
 								<a href="menuuser.php">
-									<i class='bx bx-home'></i>
+									<i class='bx bxs-dashboard'></i>
 									<span class="text nav-text">Dasboard</span>
 								</a>
 							</li>
@@ -87,7 +87,7 @@ if ($_SESSION['level'] != "user") {
 						<div class="msg-header">
 							<p>Halo kakak ada yang bisa saya bantu?</p>
 						</div>
-					</div>					
+					</div>
 				</div>
 				<div class="typing-field">
 					<div class="input-data">
@@ -98,6 +98,29 @@ if ($_SESSION['level'] != "user") {
 			</div>
 		</div>
 	</div>
+	<script>
+		$(document).ready(function () {
+			$("#send-btn").on("click", function () {
+				$value = $("#data").val();
+				$msg = '<div class="user-inbox inbox"><div class="msg-header"><p>' + $value + '</p></div></div>';
+				$(".form").append($msg);
+				$("#data").val('');
+
+				// start ajax code
+				$.ajax({
+					url: 'conectbot.php',
+					type: 'POST',
+					data: 'text=' + $value,
+					success: function (result) {
+						$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>' + result + '</p></div></div>';
+						$(".form").append($replay);
+						// when chat goes down the scroll bar automatically comes to the bottom
+						$(".form").scrollTop($(".form")[0].scrollHeight);
+					}
+				});
+			});
+		});
+	</script>
 </body>
 
 </html>
